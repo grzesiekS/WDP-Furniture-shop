@@ -1,0 +1,122 @@
+@import "../../../styles/settings.scss";
+@import "../../../styles/animations.scss";
+
+.root {
+  background-color: $productbox-bg;
+  border: 1px solid $productbox-border;
+  margin-bottom: 2rem;
+
+  .photo {
+    position: relative;
+    background: {
+      color: $productbox-photo-bg;
+      size: contain;
+      position: center;
+      repeat: no-repeat;
+    }
+    overflow: hidden;
+    align-items: flex-end;
+
+    .sale {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: $productbox-sale-bg;
+      border-radius: 50%;
+      color: $productbox-sale-text;
+      padding: 30px 15px 5px 15px;
+    }
+
+    .buttons {
+      @extend .ft-animation;
+      opacity: 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .image {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .content {
+    text-align: center;
+    padding: 20px;
+
+    h5 {
+      color: $productbox-content-text;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 1px;
+    }
+
+    .stars {
+      a {
+        text-decoration: none;
+        color: $productbox-content-stars-text;
+      }
+    }
+  }
+
+  .line {
+    margin: 0 10px;
+    border-bottom: 1px solid $productbox-line-border;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 50%;
+      width: 30px;
+      border-bottom: 4px solid $productbox-line-border-before;
+      transform: translateX(-50%);
+    }
+  }
+
+  .actions {
+    padding: 15px 10px 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .outlines a[class~="true"] {
+    background-color: $productbox-content-text;
+    color: $productbox-sale-text ;
+  }
+
+  .price {
+    display: flex;
+  }
+
+  .priceButton {
+    @extend .ft-animation;
+  }
+  &:hover {
+    .buttons {
+      opacity: 1;
+    }
+
+    .priceButton {
+      background-color: $productbox-pricebutton-hover-bg;
+    }
+  }
+
+  .oldPriceButton {
+    position: relative;
+    text-decoration: line-through;
+    background-color: $productbox-oldprice-bg;
+    color: $productbox-oldprice-text;
+  }
+
+  .favoriteButton {
+    &.active {
+      color: $productbox-favoritebutton-active;
+      background-color: $productbox-content-text;
+    }
+  }
+}

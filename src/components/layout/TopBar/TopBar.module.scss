@@ -1,0 +1,74 @@
+@import "../../../styles/settings.scss";
+@import "../../../styles/animations.scss";
+
+.root {
+  background-color: $topbar-bg;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      line-height: 55px;
+
+      a {
+        @extend .sw-animation;
+        color: $topbar-link;
+        font-size: 13px;
+
+        &:hover {
+          color: $topbar-link-hover;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .topOptions ul li {
+    margin-right: 1.5rem;
+
+    .icon {
+      margin-left: 5px;
+    }
+  }
+
+  .topMenu ul li {
+    margin-left: 1.5rem;
+
+    .icon {
+      margin-right: 5px;
+    }
+  }
+}
+
+@media (min-width: 600px) and (max-width: 767px) {
+  .root {
+
+    .topBarSpan {
+      display: none;
+    }
+
+    .topMenu ul li {
+      margin-left: 1rem;
+    }
+  }
+}
+
+@media (max-width: 599px) {
+  .root{
+
+    .topBarSpan {
+      display: none;
+    }
+
+    .topOptions ul li {
+      margin-right: .5rem;
+    }
+
+    .topMenu ul li {
+      margin-left: 1rem;
+    }
+  }
+}

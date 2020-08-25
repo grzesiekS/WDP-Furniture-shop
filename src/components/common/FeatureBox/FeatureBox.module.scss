@@ -1,0 +1,111 @@
+@import "../../../styles/settings.scss";
+@import "../../../styles/animations.scss";
+
+.root {
+  border: 1px solid $featurebox-border;
+  text-align: center;
+  margin-top: 40px;
+  cursor: pointer;
+  height: 100%;
+  &:hover {
+    .iconWrapper {
+      color: $featurebox-icon-text;
+
+      &::after {
+        background-color: $featurebox-content-active-icon-bg;
+        border-color: $featurebox-content-active-icon-border;
+      }
+    }
+
+    .content {
+      color: $featurebox-content-active-text;
+    }
+  }
+  .iconWrapper {
+    height: 60px;
+    transform: translateY(-50%);
+    color: $featurebox-icon-text;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    @extend .sw-animation;
+
+    .icon {
+      position: relative;
+      z-index: 9;
+    }
+
+    &::before {
+      content: "";
+      border: 1px solid $featurebox-icon-border;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 76px;
+      height: 76px;
+      border-radius: 100%;
+      background-color: $featurebox-icon-bg;
+      z-index: -1;
+    }
+
+    &::after {
+      content: "";
+      width: 60px;
+      height: 60px;
+      border-radius: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 1px solid $featurebox-icon-border;
+    }
+  }
+
+  .content {
+    text-transform: uppercase;
+    color: $featurebox-content-text;
+    margin-top: -0.5rem;
+    letter-spacing: 1px;
+    font-weight: 300;
+    @extend .sw-animation;
+
+    h5 {
+      font-weight: 600;
+      margin: 0;
+    }
+
+    p {
+    }
+  }
+
+  &.active {
+    .iconWrapper {
+      color: $featurebox-content-active-icon-text;
+
+      &::after {
+        background-color: $featurebox-content-active-icon-bg;
+        border-color: $featurebox-content-active-icon-border;
+      }
+    }
+
+    .content {
+      color: $featurebox-content-active-text;
+    }
+  }
+
+  &:hover {
+    .iconWrapper {
+      color: $featurebox-content-active-icon-text;
+
+      &::after {
+        background-color: $featurebox-content-active-icon-bg;
+        border-color: $featurebox-content-active-icon-border;
+      }
+    }
+
+    .content {
+      color: $featurebox-content-active-text;
+    }
+  }
+}

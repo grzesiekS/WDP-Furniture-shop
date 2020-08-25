@@ -1,0 +1,52 @@
+@import "../../../styles/settings.scss";
+@import "../../../styles/animations.scss";
+
+// .root {
+// }
+
+.main {
+  @extend .sw-animation;
+  background-color: $button-main-bg;
+  color: $button-main-text;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  padding: 10px 30px;
+
+  &:not(.noHover):hover {
+    color: $button-main-text !important;
+    background-color: $button-main-bg-hover;
+    text-decoration: none;
+
+  }
+}
+
+.small {
+  @extend .main;
+  font-size: 10px;
+  line-height: 24px;
+  padding: 5px 10px;
+  font-weight: 400;
+}
+
+.outline {
+  @extend .sw-animation;
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid $button-outline-border;
+  color: $button-outline-text;
+  background-color: $button-outline-bg;
+  font-size: 13px;
+  line-height: 22px;
+
+  &:not(.noHover):hover {
+    background-color: $button-outline-bg-hover;
+    color: $button-outline-text-hover;
+  }
+}
+
+button {
+  &:focus {
+    outline: 0;
+  }
+}
