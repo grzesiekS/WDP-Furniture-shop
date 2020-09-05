@@ -5,23 +5,33 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
 class MainLayout extends React.Component {
+  rwdModeSelect = windowWidth => {
+    if (
+      windowWidth <= this.props.rwdModeMaxWidth.mobile &&
+      this.props.rwdMode !== 'mobile'
+    ) {
+      this.props.setRwdMode('mobile');
+    } else if (
+      windowWidth > this.props.rwdModeMaxWidth.mobile &&
+      windowWidth <= this.props.rwdModeMaxWidth.tablet &&
+      this.props.rwdMode !== 'tablet'
+    ) {
+      this.props.setRwdMode('tablet');
+    } else if (
+      windowWidth > this.props.rwdModeMaxWidth.tablet &&
+      this.props.rwdMode !== 'desktop'
+    ) {
+      this.props.setRwdMode('desktop');
+    }
+  };
+
   render() {
-    const { children, rwdMode, rwdModeMaxWidth, setRwdMode } = this.props;
+    const { children } = this.props;
 
-    const rwdModeSelect = windowWidth => {
-      if (windowWidth <= rwdModeMaxWidth.mobile) {
-        setRwdMode('mobile');
-      } else if (windowWidth <= rwdModeMaxWidth.tablet && rwdMode !== 'tablet') {
-        setRwdMode('tablet');
-      } else if (windowWidth > rwdModeMaxWidth.tablet && rwdMode !== 'desktop') {
-        setRwdMode('desktop');
-      }
-    };
-
-    rwdModeSelect(window.innerWidth);
+    this.rwdModeSelect(window.innerWidth);
 
     window.addEventListener('resize', () => {
-      rwdModeSelect(window.innerWidth);
+      this.rwdModeSelect(window.innerWidth);
     });
 
     return (
