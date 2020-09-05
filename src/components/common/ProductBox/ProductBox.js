@@ -27,6 +27,7 @@ const ProductBox = ({
   addToCompare,
   comparison,
   currency,
+  addProduct,
 }) => (
   <div className={styles.root}>
     <div className={styles.photo}>
@@ -38,7 +39,13 @@ const ProductBox = ({
         <Button href={'/product/' + id} variant='small'>
           Quick View
         </Button>
-        <Button variant='small'>
+        <Button
+          variant='small'
+          onClick={event => {
+            event.preventDefault();
+            addProduct(id);
+          }}
+        >
           <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
         </Button>
       </div>
@@ -105,6 +112,7 @@ ProductBox.propTypes = {
   addToCompare: PropTypes.func,
   comparison: PropTypes.bool,
   currency: PropTypes.string,
+  addProduct: PropTypes.func,
 };
 
 export default ProductBox;
