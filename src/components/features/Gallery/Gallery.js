@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './Gallery.module.scss';
 import Button from '../../common/Button/Button';
-import Tooltip from '@material-ui/core/Tooltip';
+//import Tooltip from '@material-ui/core/Tooltip';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -11,7 +11,6 @@ import {
   faArrowLeft,
   faArrowRight,
   faExchangeAlt,
-  faShoppingBasket,
   faEye,
 } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
@@ -83,13 +82,13 @@ class Gallery extends React.Component {
                               Add to compare
                             </FontAwesomeIcon>
                           </Button>
-                          <Tooltip title='Add to cart' placement='right' arrow>
+                          {/* <Tooltip title='Add to cart' placement='right' arrow>
                             <Button variant='outline'>
                               <FontAwesomeIcon
                                 icon={faShoppingBasket}
                               ></FontAwesomeIcon>
                             </Button>
-                          </Tooltip>
+                          </Tooltip> */}
                         </div>
                       </div>
                       <div
