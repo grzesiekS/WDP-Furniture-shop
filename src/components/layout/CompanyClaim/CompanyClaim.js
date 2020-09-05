@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import styles from './CompanyClaim.module.scss';
 import CartPopup from '../../features/CartPopup/CartPopupContainer';
@@ -20,6 +20,8 @@ class CompanyClaim extends React.Component {
   };
 
   render() {
+    const { countCartProducts } = this.props;
+
     return (
       <div className={styles.root}>
         <div className='container'>
@@ -40,7 +42,7 @@ class CompanyClaim extends React.Component {
                 <div className={styles.cartIcon} onClick={() => this.togglePopup(true)}>
                   <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
                 </div>
-                <div className={styles.cartCounter}>123456</div>
+                <div className={styles.cartCounter}>{countCartProducts}</div>
               </a>
             </div>
           </div>
@@ -51,6 +53,9 @@ class CompanyClaim extends React.Component {
   }
 }
 
+CompanyClaim.propTypes = {
+  countCartProducts: PropTypes.number,
+};
 // CompanyClaim.propTypes = {};
 
 export default CompanyClaim;
