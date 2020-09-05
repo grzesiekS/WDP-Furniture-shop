@@ -64,7 +64,6 @@
         right: 0;
         transform: translate(50%, -50%);
         padding-left: 10px;
-        maxlength: 3
       }
 
       &:hover {
@@ -76,26 +75,22 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .cart {
+    text-align: center !important;
+  }
+}
+
 @media (max-width: 599px) {
-  .mobileTel {
-    left: 64%;
-    top: 30%;
-
-    .icon {
-      font-size: 14px;
-    }
-
-    .mobileNumber {
-      font-size: 14px;
+  .root {
+    :global(.container) > :global(.row) {
+      height: 100%;
     }
   }
 
-  .mobileLogo {
-    left: -40%;
-  }
-
-  .mobileCart {
-    top: -13px;
-    max-width: fit-content;
+  .phoneNumber, .cart {
+    flex: 100%;
+    text-align: center !important;
+    margin: 25px 0;
   }
 }
