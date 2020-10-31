@@ -30,4 +30,4 @@ dla plików, które zostały wybrane za pomocą `git add` i mają być zapisane 
 
 ## Link do strony
 
-https://kodilla-site.netlify.app/
+https://dreadful-demon-79855.herokuapp.com/
